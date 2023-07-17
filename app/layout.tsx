@@ -1,7 +1,7 @@
-import './globals.css';
 import type { Metadata } from 'next';
-import ToasterContext from './context/ToasterContext';
 import AuthContext from './context/AuthContext';
+import ToasterContext from './context/ToasterContext';
+import './globals.css';
 
 import { Inter } from 'next/font/google';
 
