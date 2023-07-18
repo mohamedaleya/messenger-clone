@@ -78,13 +78,17 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
                 register={register}
               />
               <div>
-                <label className="block text-sm font-medium leading-6 text-gray-900">
+                <label
+                  htmlFor="photo"
+                  className="block text-sm font-medium leading-6 text-gray-900"
+                >
                   Photo
                 </label>
                 <div className="mt-2 flex items-center gap-x-3">
                   <Image
                     width={48}
                     height={48}
+                    priority
                     className="rounded-full"
                     src={
                       image || currentUser?.image || '/images/placeholder.jpg'
