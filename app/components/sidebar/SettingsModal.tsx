@@ -8,8 +8,8 @@ import { useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import Button from '../Button';
+import Input from '../Inputs/Input';
 import Modal from '../Modal';
-import Input from '../inputs/Input';
 
 interface SettingsModalProps {
   isOpen?: boolean;

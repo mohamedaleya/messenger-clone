@@ -1,7 +1,7 @@
 'use client';
 
 import Button from '@/app/components/Button';
-import Input from '@/app/components/inputs/Input';
+import Input from '@/app/components/Inputs/Input';
 import AuthSocialButton from './AuthSocialButton';
 
 import { useCallback, useEffect, useState } from 'react';
