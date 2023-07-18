@@ -6,7 +6,7 @@ import useConversation from '@/app/hooks/useConversation';
 import { Dialog } from '@headlessui/react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
-import { useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import toast from 'react-hot-toast';
 import { FiAlertTriangle } from 'react-icons/fi';
 
@@ -21,6 +21,7 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({ isOpen, onClose }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const onDelete = useCallback(() => {
+    setIsLoading(true);
     axios
       .delete(`/api/conversations/${conversationId}`)
       .then(() => {
@@ -28,7 +29,7 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({ isOpen, onClose }) => {
         router.push('/conversations');
         router.refresh();
       })
-      .catch(() => toast.error('Something went wrong!'))
+      .catch((error) => toast.error('Something went wrong!'))
       .finally(() => setIsLoading(false));
   }, [conversationId, router, onClose]);
   return (
