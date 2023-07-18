@@ -11,7 +11,7 @@ import toast from 'react-hot-toast';
 import { FiAlertTriangle } from 'react-icons/fi';
 
 interface ConfirmModalProps {
-  isOpen: boolean;
+  isOpen?: boolean;
   onClose: () => void;
 }
 
@@ -29,7 +29,7 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({ isOpen, onClose }) => {
         router.push('/conversations');
         router.refresh();
       })
-      .catch((error) => toast.error('Something went wrong!'))
+      .catch(() => toast.error('Something went wrong!'))
       .finally(() => setIsLoading(false));
   }, [conversationId, router, onClose]);
   return (

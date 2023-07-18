@@ -15,7 +15,7 @@ export async function DELETE(
     const currentUser = await getCurrentUser();
 
     if (!currentUser?.id) {
-      return new NextResponse('Unauthorized', { status: 401 });
+      return NextResponse.json(null);
     }
 
     const existingConversation = await prisma.conversation.findUnique({
@@ -39,6 +39,8 @@ export async function DELETE(
         },
       },
     });
+
+    return NextResponse.json(deletedConversation);
   } catch (error: any) {
     console.log(error, 'ERROR_CONVERSATION_DELETE');
     return new NextResponse('Internal Error', { status: 500 });
