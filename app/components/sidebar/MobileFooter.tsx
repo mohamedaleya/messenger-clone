@@ -5,15 +5,15 @@ import useRoutes from '@/app/hooks/useRoutes';
 import MobileItem from './MobileItem';
 
 const MobileFooter = () => {
-    const routes = useRoutes();
-    const { isOpen } = useConversation();
+  const routes = useRoutes();
+  const { isOpen } = useConversation();
 
-    if (isOpen) {
-        return null;
-    }
-    return (
-        <div
-            className="
+  if (isOpen) {
+    return null;
+  }
+  return (
+    <div
+      className="
     fixed
     bottom-0
     z-40
@@ -24,18 +24,18 @@ const MobileFooter = () => {
     border-t-[1px]
     bg-white
     lg:hidden"
-        >
-            {routes.map((route) => (
-                <MobileItem
-                    key={route.label}
-                    href={route.href}
-                    active={route.active}
-                    icon={route.icon}
-                    onClick={route.onClick}
-                />
-            ))}
-        </div>
-    );
+    >
+      {routes.map((route) => (
+        <MobileItem
+          key={route.label}
+          href={route.href}
+          active={route.active}
+          icon={route.icon}
+          onClick={route.onClick}
+        />
+      ))}
+    </div>
+  );
 };
 
 export default MobileFooter;

@@ -3,18 +3,18 @@ import Sidebar from '../components/sidebar/Sidebar';
 import ConversationList from './components/ConversationList';
 
 export default async function ConversationsLayout({
-    children,
+  children,
 }: {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-    const conversations = await getConversations();
+  const conversations = await getConversations();
 
-    return (
-        <Sidebar>
-            <div className="h-full">
-                <ConversationList initialItems={conversations} />
-                {children}
-            </div>
-        </Sidebar>
-    );
+  return (
+    <Sidebar>
+      <div className="h-full">
+        <ConversationList initialItems={conversations} />
+        {children}
+      </div>
+    </Sidebar>
+  );
 }

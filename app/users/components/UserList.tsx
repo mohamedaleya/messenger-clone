@@ -4,12 +4,12 @@ import { User } from '@prisma/client';
 import UserBox from './UserBox';
 
 interface UserListProps {
-    items: User[];
+  items: User[];
 }
 const UserList: React.FC<UserListProps> = ({ items }) => {
-    return (
-        <aside
-            className="
+  return (
+    <aside
+      className="
     insert-y-0 fixed
     left-0
     block
@@ -22,19 +22,17 @@ const UserList: React.FC<UserListProps> = ({ items }) => {
     lg:block
     lg:w-80
     lg:pb-0"
-        >
-            <div className="px-5">
-                <div className="flex-col">
-                    <div className="py-4 text-2xl font-bold text-neutral-800">
-                        People
-                    </div>
-                </div>
-                {items.map((item) => (
-                    <UserBox key={item.id} data={item} />
-                ))}
-            </div>
-        </aside>
-    );
+    >
+      <div className="px-5">
+        <div className="flex-col">
+          <div className="py-4 text-2xl font-bold text-neutral-800">People</div>
+        </div>
+        {items.map((item) => (
+          <UserBox key={item.id} data={item} />
+        ))}
+      </div>
+    </aside>
+  );
 };
 
 export default UserList;

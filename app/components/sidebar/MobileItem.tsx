@@ -4,30 +4,30 @@ import clsx from 'clsx';
 import Link from 'next/link';
 
 interface MobileItemsProps {
-    href: string;
-    icon: any;
-    active?: boolean;
-    onClick?: () => void;
+  href: string;
+  icon: any;
+  active?: boolean;
+  onClick?: () => void;
 }
 
 const MobileItem: React.FC<MobileItemsProps> = ({
-    href,
-    icon: Icon,
-    active,
-    onClick,
+  href,
+  icon: Icon,
+  active,
+  onClick,
 }) => {
-    const handleClick = () => {
-        if (onClick) {
-            return onClick();
-        }
-    };
+  const handleClick = () => {
+    if (onClick) {
+      return onClick();
+    }
+  };
 
-    return (
-        <Link
-            href={href}
-            onClick={onClick}
-            className={clsx(
-                `
+  return (
+    <Link
+      href={href}
+      onClick={onClick}
+      className={clsx(
+        `
         group
         flex
         w-full
@@ -41,12 +41,12 @@ const MobileItem: React.FC<MobileItemsProps> = ({
         hover:bg-gray-100 
         hover:text-black
         `,
-                active && 'bg-gray-100 text-black',
-            )}
-        >
-            <Icon className="h-6 w-6" />
-        </Link>
-    );
+        active && 'bg-gray-100 text-black',
+      )}
+    >
+      <Icon className="h-6 w-6" />
+    </Link>
+  );
 };
 
 export default MobileItem;
