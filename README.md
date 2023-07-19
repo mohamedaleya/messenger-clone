@@ -1,3 +1,5 @@
+![](https://github.com/mohamedaleya/messenger-clone/blob/main/preview/preview.gif)
+
 # Messenger Clone Application
 
 Welcome to the Messenger Clone project! This project is a full stack chat application, developed as a clone of the popular Messenger app. It leverages modern technologies including Next.js 13, React, Tailwind CSS, Prisma, MongoDB, NextAuth, and Pusher for real-time functionalities. The idea behind this project was to create an application that replicates the functionality and design of Messenger, providing real-time chatting capabilities, secure authentication, and a sleek, modern UI.
